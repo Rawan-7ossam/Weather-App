@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather</title>
+    <link
+      rel="shortcut icon"
+      href="images/weather-app.png"
+      type="image/x-icon"
+    />
+    <link rel="stylesheet" href="css/all.min.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg py-5">
+      <div class="container d-flex">
+        <a href="#" class="text-decoration-none">
+          <div
+            class="navbar-brand d-flex align-items-center justify-content-center"
+          >
+            <img src="images/logo@2x.png" alt="logo" />
+            <div class="logo ps-3">
+              <h1 class="m-0 pb-1 fs-6 fw-bold text-white">Weather</h1>
+              <p class="m-0 p-0">tagline goes here</p>
+            </div>
+          </div>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item pe-5">
+              <a
+                class="nav-link active text-white rounded-pill px-4 py-1"
+                aria-current="page"
+                href="#"
+                >Home</a
+              >
+            </li>
+            <li class="nav-item pe-5">
+              <a class="nav-link text-white" href="#">News</a>
+            </li>
+            <li class="nav-item pe-5">
+              <a class="nav-link text-white" href="#">Live Cameras</a>
+            </li>
+            <li class="nav-item pe-5">
+              <a class="nav-link text-white" href="#">Photos</a>
+            </li>
+            <li class="nav-item pe-5">
+              <a class="nav-link text-white" href="#">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <div class="container">
+        <form class="position-relative w-100">
+          <input
+            id="searchInput"
+            type="text"
+            class="w-100 rounded-pill text-white"
+            placeholder="Find your location..."
+            name="location"
+          />
+          <button id="findButton" class="btn position-absolute rounded-pill">
+            Find
+          </button>
+        </form>
+      </div>
+    </main>
+
+    <div class="container">
+      <div class="item-table-container row d-flex">
+        <div id="col-today-degree" class="col-lg-4 px-0">
+          <div class="today-temp">
+            <div class="title d-flex justify-content-between p-2">
+              <span id="todayDay">Tuesday</span>
+              <span id="todayDate">1july</span>
+            </div>
+            <div
+              class="content d-flex flex-column text-white align-items-start p-2"
+            >
+              <p id="location" class="mt-4 mb-0">Cairo</p>
+              <p id="degree" class="fw-bold mb-0 pb-0 mt-0">32.3oC</p>
+              <img id="iconTodayDegree" src="images/113.png" alt="" />
+              <p class="text-degree">Partly cloudy</p>
+              <div class="item-end pb-3">
+                <span class="pe-3">
+                  <img src="images/icon-umberella.png" alt="icon-umberella" />
+                  <span>20%</span>
+                </span>
+                <span class="pe-3">
+                  <img src="images/icon-wind.png" alt="icon-wind" />
+                  <span>20%</span>
+                </span>
+                <span>
+                  <img src="images/icon-compass.png" alt="icon-compass" />
+                  <span>20%</span>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 tomorrow-temp px-0">
+          <div class=" ">
+            <div
+              class="tomorrow d-flex justify-content-center align-items-center"
+            >
+              <p id="tomorrowDay" class="pt-2 mb-1 pb-1">Wednesday</p>
+            </div>
+            <div
+              class="content d-flex flex-column text-white align-items-center justify-content-center p-3"
+            >
+              <img
+                id="iconTomorrowDegree"
+                src="images/113.png"
+                alt=""
+                class="pb-3"
+              />
+              <p id="tomorrowMaxDegree" class="fw-bold mb-0 pb-0">32.3oC</p>
+              <p id="tomorrowMinDegree">24.8</p>
+              <p id="textTomorrowDegree" class="text-degree">Sunny</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 after-tomorrow-temp px-0">
+          <div class="  ">
+            <div class="title d-flex justify-content-center align-items-center">
+              <p id="afterTomorrowDay" class="pt-2 mb-1 pb-1">Wednesday</p>
+            </div>
+            <div
+              class="content d-flex flex-column text-white align-items-center justify-content-center p-3"
+            >
+              <img
+                id="iconAfterTomorrowDegree"
+                src="images/113.png"
+                alt=""
+                class="pb-3"
+              />
+              <p id="afterTomorrowMaxDegree" class="fw-bold mb-0 pb-0">
+                32.3oC
+              </p>
+              <p id="afterTomorrowMinDegree">24.8</p>
+              <p id="textAfterTomorrowDegree" class="text-degree">Sunny</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container py-5">
+        <div
+          class="upper-content d-flex align-items-center justify-content-between"
+        >
+          <div class="left position-relative w-75">
+            <input
+              type="email"
+              placeholder="Enter your email to subscribe..."
+              class="form-control my-5 rounded-pill py-3 px-4 w-75"
+            />
+            <button class="btn rounded-pill text-white position-absolute">
+              Subscribe
+            </button>
+          </div>
+          <div class="d-flex me-5">
+            <a href="" class="text-decoration-none"
+              ><div id="icon-list" class="d-flex justify-content-center p-3">
+                <i class="fa-brands fa-facebook-f"></i></div
+            ></a>
+
+            <a href="" class="text-decoration-none"
+              ><div id="icon-list" class="d-flex justify-content-center p-3">
+                <i class="fa-brands fa-twitter"></i></div
+            ></a>
+
+            <a href="" class="text-decoration-none"
+              ><div id="icon-list" class="d-flex justify-content-center p-3">
+                <i class="fa-brands fa-google-plus-g"></i></div
+            ></a>
+
+            <a href="" class="text-decoration-none"
+              ><div id="icon-list" class="d-flex justify-content-center p-3">
+                <i class="fa-brands fa-pinterest"></i></div
+            ></a>
+          </div>
+        </div>
+        <p class="text-white">
+          Copyright 2014 Company name. Designed by Themezy. All rights reserved
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
