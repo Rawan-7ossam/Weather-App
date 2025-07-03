@@ -33,25 +33,6 @@ This is a simple yet effective **Weather Application** that provides current wea
 
 ---
 
-## 🚀 How to Run Locally
-
-Follow these simple steps to get the project up and running on your local machine:
-
-1.  **Clone the Repository:**
-    ```bash
-    git clone <your-repository-url>
-    cd weather-app
-    ```
-
-2.  **Get an API Key:**
-    * Go to [WeatherAPI.com](https://www.weatherapi.com/) and sign up for a free API key.
-    * Locate the `const API_KEY` variable in your `main.js` file and replace `"89819d23816b4237950201930250107"` with your newly obtained API key.
-
-3.  **Open in Browser:**
-    * Simply open the `index.html` file in your preferred web browser.
-
----
-
 ## 📂 Project Structure
 
 .
