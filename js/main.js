@@ -15,14 +15,14 @@ var textTodayDegree = document.querySelector(".text-degree");
 var tomorrowDay = document.querySelector("#tomorrowDay");
 var iconTomorrowDegree = document.querySelector("#iconTomorrowDegree");
 var tomorrowMaxDegree =document.querySelector("#tomorrowMaxDegree");
-var tomorrowMinDegree = document.querySelector("tomorrowMinDegree");
+var tomorrowMinDegree = document.querySelector("#tomorrowMinDegree");
 var textTomorrowDegree = document.querySelector("#textTomorrowDegree");
 
 
-var fterTomorrowDay = document.querySelector("#afterTomorrowDay");
+var afterTomorrowDay = document.querySelector("#afterTomorrowDay");
 var iconAfterTomorrowDegree = document.querySelector("#iconAfterTomorrowDegree");
 var afterTomorrowMaxDegree =document.querySelector("#afterTomorrowMaxDegree");
-var afterTomorrowMinDegree = document.querySelector("afterTomorrowMinDegree");
+var afterTomorrowMinDegree = document.querySelector("#afterTomorrowMinDegree");
 var textAfterTomorrowDegree = document.querySelector("#textAfterTomorrowDegree");
 
 
@@ -51,9 +51,13 @@ function getWeather(location){
 
 
 function displayWeather(dataWeather){
+    var todayData = dataWeather.forecast.forecastday[0];
     var currentLocation = dataWeather.location;
     var currentCondition = dataWeather.current;
 
+    var todayDateObj = new Date(todayData.date);
+    todayDayElement.textContent = todayDateObj.toLocaleDateString('en-US', { weekday: 'long' });
+    todayDateElement.textContent = `${todayDateObj.getDate()}${todayDateObj.toLocaleDateString('en-US', { month: 'long' })}`;
     locationElement.textContent = currentLocation.name;
     todayDegree.textContent = `${currentCondition.temp_c}°C`;
     iconTodayDegree.src = currentCondition.condition.icon;
@@ -63,6 +67,8 @@ function displayWeather(dataWeather){
 
     if(forecastDays[1]){
         var tomorrowDataWeather = forecastDays[1];
+        var tomorrowDateObj = new Date(tomorrowDataWeather.date);
+        tomorrowDay.textContent = tomorrowDateObj.toLocaleDateString('en-US', { weekday: 'long' });
         iconTomorrowDegree.src = tomorrowDataWeather.day.condition.icon;
         tomorrowMaxDegree.textContent = `${tomorrowDataWeather.day.maxtemp_c}°C`;
         tomorrowMinDegree.textContent = `${tomorrowDataWeather.day.mintemp_c}°C`;
@@ -72,13 +78,16 @@ function displayWeather(dataWeather){
 
     if(forecastDays[2]){
         var afterTomorrowDataWeather = forecastDays[2];
+        var afterTomorrowDateObj = new Date(afterTomorrowDataWeather.date);
+        afterTomorrowDay.textContent = afterTomorrowDateObj.toLocaleDateString('en-US', { weekday: 'long' });
         iconAfterTomorrowDegree.src = afterTomorrowDataWeather.day.condition.icon;
         afterTomorrowMaxDegree.textContent = `${afterTomorrowDataWeather.day.maxtemp_c}°C`;
-        afterTomorrowMinDegreetomorrowMinDegree.textContent = `${afterTomorrowDataWeather.day.mintemp_c}°C`;
+        afterTomorrowMinDegree.textContent = `${afterTomorrowDataWeather.day.mintemp_c}°C`;
         textAfterTomorrowDegree.textContent = afterTomorrowDataWeather.day.condition.text;
 
     }
 }
+
 
 findButton.addEventListener("click", function() {
     var location = searchInput.value;
